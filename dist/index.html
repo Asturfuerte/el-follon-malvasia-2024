@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>El Follón | Malvasía Volcánica 2024</title>
-  <meta name="description" content="El Follón, Malvasía Volcánica 2024 de Lajares, Fuerteventura. Edición limitada de 290 botellas.">
+  <title>El Follón | Malvasía Volcánica 2026</title>
+  <meta name="description" content="El Follón, Malvasía Volcánica 2026 de Lajares, Fuerteventura. Edición limitada de 290 botellas.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2313291f'/%3E%3Cpath d='M26 9h12v8l4 9v26a5 5 0 0 1-5 5H27a5 5 0 0 1-5-5V26l4-9z' fill='none' stroke='%23d0a34a' stroke-width='3'/%3E%3Cpath d='M23 36h18' stroke='%23f4eddf' stroke-width='3'/%3E%3C/svg%3E">
   <style>
     :root {
@@ -92,6 +92,16 @@
       position: relative;
       overflow: hidden;
     }
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      width: 28rem;
+      height: 28rem;
+      border: 1px solid rgba(208,163,74,.2);
+      border-radius: 50%;
+      left: -15rem;
+      bottom: -13rem;
+    }
     .eyebrow {
       margin: 0 0 1.25rem;
       color: var(--gold-light);
@@ -135,7 +145,6 @@
       font-family: Georgia, "Times New Roman", serif;
       color: #fff;
       font-size: 1.65rem;
-      font-variant-numeric: lining-nums;
       line-height: 1;
     }
     .hero-fact span {
@@ -221,18 +230,22 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: clamp(2.5rem, 5vw, 6rem);
-      align-items: center;
+      align-items: stretch;
       background: #fff;
+      overflow: hidden;
     }
     .vineyard-photo {
       margin: 0;
-      width: 100%;
+      aspect-ratio: 782 / 769;
+      overflow: hidden;
+      background: var(--paper);
     }
     .vineyard-photo img {
       display: block;
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: contain;
+      object-position: center;
     }
     .vineyard-panel {
       min-width: 0;
@@ -254,9 +267,9 @@
     }
     .fact-row dt { color: var(--ink); font-weight: 700; }
     .fact-row dd { margin: 0; color: var(--muted); }
-    .rainfall { display: flex; align-items: center; gap: .8rem; margin: 2.5rem 0 0; }
-    .rainfall strong { color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 5vw, 5rem); line-height: 1; }
-    .rainfall span { max-width: 11rem; color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .rainfall { display: grid; grid-template-columns: auto minmax(0, 11rem); align-items: center; gap: 1rem; margin: 2.5rem 0 0; }
+    .rainfall strong { color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 5vw, 5rem); font-variant-numeric: lining-nums tabular-nums; line-height: 1; white-space: nowrap; }
+    .rainfall span { color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .06em; line-height: 1.35; text-transform: uppercase; }
 
     .tasting { background: var(--ink); color: #fff; }
     .tasting .section-title { color: #fff; max-width: 10ch; }
@@ -289,7 +302,7 @@
       border-top: 1px solid var(--gold);
       border-bottom: 1px solid var(--gold);
     }
-    .service-temp strong { color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.4rem, 4vw, 4rem); line-height: 1; }
+    .service-temp strong { flex: 0 0 auto; color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.4rem, 4vw, 4rem); line-height: 1; white-space: nowrap; }
     .service-temp span { color: var(--muted); }
     .pairing { font-size: 1.12rem; }
     .analysis { margin: 2.5rem 0 0; }
@@ -358,21 +371,13 @@
     }
 
     @media (max-width: 600px) {
-      .hero h1 {
-        font-size: clamp(2.4rem, 12.5vw, 4.2rem);
-        max-width: none;
-        white-space: nowrap;
-      }
-      .hero-lead { color: rgba(255,255,255,.95); }
-      .hero-fact span { color: rgba(255,255,255,.85); }
-      .nav a { color: #fff; }
-      .tasting-note p { color: rgba(255,255,255,.93); }
-      .limited p { color: rgba(255,255,255,.92); }
-      footer { color: rgba(255,255,255,.9); }
+      .hero h1 { font-size: clamp(3.8rem, 21vw, 6.2rem); }
       .hero-facts { gap: 1.5rem; }
       .hero-fact { min-width: 7rem; }
       .section { padding: 4.5rem 1.25rem; }
       .fact-row { grid-template-columns: 1fr; gap: .25rem; }
+      .rainfall { grid-template-columns: 1fr; align-items: start; gap: .65rem; }
+      .rainfall span { max-width: none; }
       .tasting-notes { grid-template-columns: 1fr; }
       footer { grid-template-columns: 1fr; }
     }
@@ -428,7 +433,7 @@
 
     <section class="section vineyard" id="vinedo">
       <figure class="vineyard-photo reveal">
-        <img src="assets/el-follon-dos-botellas-mar.jpg" alt="Dos botellas de El Follón con copas, uvas blancas y vistas al mar Atlántico">
+        <img src="assets/el-follon-dos-botellas.jpg" alt="Dos botellas de El Follón con copas, uvas blancas y paisaje volcánico">
       </figure>
       <div class="vineyard-panel reveal">
         <p class="section-kicker">Viñedo y elaboración</p>
@@ -438,7 +443,7 @@
           <div class="fact-row"><dt>Suelos</dt><dd>Franco arcilla arenosa y ceniza volcánica.</dd></div>
           <div class="fact-row"><dt>Cultivo</dt><dd>Viñedo prefiloxérico dispuesto en hileras y protegido por un paisaje de gran contraste.</dd></div>
         </dl>
-        <div class="rainfall"><strong>120–150</strong><span>mm de pluviometría media anual</span></div>
+        <div class="rainfall"><strong>120–150 mm</strong><span>Pluviometría media anual</span></div>
       </div>
     </section>
 
@@ -490,7 +495,7 @@
 
   <footer>
     <div>
-      <p>El Follón · Malvasía Volcánica 2024 · Fuerteventura</p>
+      <p>El Follón · Malvasía Volcánica 2026 · Fuerteventura</p>
     </div>
   </footer>
 
