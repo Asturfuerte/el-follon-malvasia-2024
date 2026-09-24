@@ -23,6 +23,7 @@
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
+      overflow-x: clip;
       color: var(--text);
       background: var(--paper-light);
       font-family: Arial, Helvetica, sans-serif;
@@ -34,7 +35,7 @@
     .serif { font-family: Georgia, "Times New Roman", serif; }
 
     .site-header {
-      position: absolute;
+      position: fixed;
       z-index: 10;
       top: 0;
       left: 0;
@@ -45,6 +46,9 @@
       gap: 2rem;
       padding: 1.5rem clamp(1.25rem, 4vw, 4rem);
       color: #fff;
+      background: rgba(8, 26, 18, .94);
+      border-bottom: 1px solid rgba(208, 163, 74, .18);
+      backdrop-filter: blur(12px);
     }
     .brand {
       text-decoration: none;
@@ -224,12 +228,14 @@
 
     .vineyard {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(20rem, .9fr);
-      gap: clamp(3rem, 8vw, 8rem);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: clamp(2.5rem, 5vw, 6rem);
       align-items: stretch;
       background: #fff;
+      overflow: hidden;
     }
     .vineyard-photo {
+      margin: 0;
       aspect-ratio: 782 / 769;
       overflow: hidden;
       background: var(--paper);
@@ -241,7 +247,16 @@
       object-fit: contain;
       object-position: center;
     }
-    .vineyard-panel { display: flex; flex-direction: column; justify-content: center; }
+    .vineyard-panel {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .vineyard .section-title {
+      max-width: 10ch;
+      font-size: clamp(2.75rem, 4.5vw, 4.8rem);
+    }
     .fact-list { margin: 3rem 0 0; border-top: 1px solid var(--stone); }
     .fact-row {
       display: grid;
@@ -334,8 +349,8 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
 
-    @media (max-width: 900px) {
-      .site-header { position: fixed; background: rgba(13,31,23,.94); backdrop-filter: blur(12px); }
+    @media (max-width: 1100px) {
+      .site-header { background: rgba(13,31,23,.97); }
       .menu-button { display: block; }
       .nav {
         display: none;
