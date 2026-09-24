@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Follón | Malvasía Volcánica 2024</title>
+  <meta name="description" content="El Follón, Malvasía Volcánica 2024 de Lajares, Fuerteventura. Edición limitada de 290 botellas.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2313291f'/%3E%3Cpath d='M26 9h12v8l4 9v26a5 5 0 0 1-5 5H27a5 5 0 0 1-5-5V26l4-9z' fill='none' stroke='%23d0a34a' stroke-width='3'/%3E%3Cpath d='M23 36h18' stroke='%23f4eddf' stroke-width='3'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #172c22;
+      --ink-deep: #0d1f17;
+      --gold: #b48635;
+      --gold-light: #d8b96d;
+      --paper: #f3eee3;
+      --paper-light: #faf7ef;
+      --stone: #d8cfbd;
+      --text: #272b27;
+      --muted: #6d6a60;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--paper-light);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .serif { font-family: Georgia, "Times New Roman", serif; }
+
+    .site-header {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.5rem clamp(1.25rem, 4vw, 4rem);
+      color: #fff;
+    }
+    .brand {
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+    .nav { display: flex; gap: 1.5rem; align-items: center; }
+    .nav a {
+      color: rgba(255,255,255,.84);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .nav a:hover, .nav a:focus-visible { color: var(--gold-light); }
+    .menu-button {
+      display: none;
+      border: 1px solid rgba(255,255,255,.45);
+      background: transparent;
+      color: #fff;
+      padding: .55rem .7rem;
+      font: inherit;
+      font-size: .8rem;
+    }
+
+    .hero {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(24rem, .95fr);
+      background: var(--ink-deep);
+      color: #fff;
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8.5rem clamp(1.5rem, 7vw, 8rem) 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-copy::before {
+      content: "";
+      position: absolute;
+      width: 28rem;
+      height: 28rem;
+      border: 1px solid rgba(208,163,74,.2);
+      border-radius: 50%;
+      left: -15rem;
+      bottom: -13rem;
+    }
+    .eyebrow {
+      margin: 0 0 1.25rem;
+      color: var(--gold-light);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      max-width: 8ch;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(4rem, 8.4vw, 8.8rem);
+      font-weight: 700;
+      line-height: .85;
+      letter-spacing: -.055em;
+    }
+    .hero-subtitle {
+      margin: 1.5rem 0 0;
+      color: var(--gold-light);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.25rem, 2vw, 1.8rem);
+      font-style: italic;
+    }
+    .hero-lead {
+      max-width: 38rem;
+      margin: 2rem 0 0;
+      color: rgba(255,255,255,.78);
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+    }
+    .hero-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin: 3rem 0 0;
+      padding: 1.5rem 0 0;
+      border-top: 1px solid rgba(208,163,74,.5);
+    }
+    .hero-fact strong {
+      display: block;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #fff;
+      font-size: 1.65rem;
+      line-height: 1;
+    }
+    .hero-fact span {
+      display: block;
+      margin-top: .4rem;
+      color: rgba(255,255,255,.55);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .hero-image { position: relative; min-height: 34rem; overflow: hidden; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(13,31,23,.22), transparent 24%), linear-gradient(0deg, rgba(13,31,23,.28), transparent 35%);
+      pointer-events: none;
+    }
+    .hero-location {
+      position: absolute;
+      z-index: 1;
+      right: 2rem;
+      bottom: 2rem;
+      padding: .65rem 1rem;
+      border: 1px solid rgba(255,255,255,.55);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(8px);
+    }
+
+    .section { padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 7vw, 8rem); }
+    .section-kicker {
+      margin: 0 0 .8rem;
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.5rem, 5.4vw, 5.5rem);
+      line-height: .98;
+      letter-spacing: -.035em;
+    }
+
+    .origin {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+      gap: clamp(3rem, 8vw, 9rem);
+      background: var(--paper);
+    }
+    .origin-copy { max-width: 43rem; align-self: end; }
+    .origin-copy p { margin: 0 0 1.25rem; font-size: clamp(1.05rem, 1.35vw, 1.25rem); }
+    .origin-intro {
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.45rem, 2.15vw, 2rem) !important;
+      line-height: 1.4;
+    }
+
+    .vineyard {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(20rem, .9fr);
+      gap: clamp(3rem, 8vw, 8rem);
+      align-items: stretch;
+      background: #fff;
+    }
+    .vineyard-photo { min-height: 42rem; overflow: hidden; }
+    .vineyard-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .vineyard-panel { display: flex; flex-direction: column; justify-content: center; }
+    .fact-list { margin: 3rem 0 0; border-top: 1px solid var(--stone); }
+    .fact-row {
+      display: grid;
+      grid-template-columns: 9rem 1fr;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--stone);
+    }
+    .fact-row dt { color: var(--ink); font-weight: 700; }
+    .fact-row dd { margin: 0; color: var(--muted); }
+    .rainfall { display: flex; align-items: baseline; gap: .8rem; margin: 2.5rem 0 0; }
+    .rainfall strong { color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(3rem, 5vw, 5rem); line-height: 1; }
+    .rainfall span { max-width: 11rem; color: var(--muted); font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+
+    .tasting { background: var(--ink); color: #fff; }
+    .tasting .section-title { color: #fff; max-width: 10ch; }
+    .tasting-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: clamp(3rem, 10vw, 10rem);
+    }
+    .tasting-notes {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 3rem;
+    }
+    .tasting-note { padding: 1.6rem 0 1.9rem; border-top: 1px solid rgba(216,185,109,.45); }
+    .tasting-note h3 { margin: 0 0 .65rem; color: var(--gold-light); font-size: .78rem; letter-spacing: .13em; text-transform: uppercase; }
+    .tasting-note p { margin: 0; color: rgba(255,255,255,.77); font-size: 1.05rem; }
+
+    .table-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 8vw, 8rem);
+      background: var(--paper-light);
+    }
+    .service-temp {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin: 2.5rem 0 2rem;
+      padding: 1.6rem 0;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+    .service-temp strong { color: var(--ink); font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.4rem, 4vw, 4rem); line-height: 1; }
+    .service-temp span { color: var(--muted); }
+    .pairing { font-size: 1.12rem; }
+    .analysis { margin: 2.5rem 0 0; }
+    .analysis div { display: flex; justify-content: space-between; gap: 2rem; padding: 1rem 0; border-bottom: 1px solid var(--stone); }
+    .analysis dt { color: var(--muted); }
+    .analysis dd { margin: 0; color: var(--ink); font-weight: 700; text-align: right; }
+
+    .limited {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      color: #fff;
+      background: var(--ink-deep);
+    }
+    .limited::before {
+      content: "290";
+      position: absolute;
+      inset: 50% auto auto 50%;
+      transform: translate(-50%, -50%);
+      color: rgba(255,255,255,.035);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(16rem, 42vw, 40rem);
+      line-height: 1;
+      pointer-events: none;
+    }
+    .limited-inner { position: relative; max-width: 54rem; margin: 0 auto; }
+    .limited .section-title { color: #fff; }
+    .limited p { max-width: 46rem; margin: 2rem auto 0; color: rgba(255,255,255,.72); font-size: 1.15rem; }
+    .cellar-note { margin-top: 2.5rem !important; color: var(--gold-light) !important; font-family: Georgia, "Times New Roman", serif; font-size: 1.35rem !important; font-style: italic; }
+
+    footer {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 2rem;
+      padding: 3rem clamp(1.5rem, 7vw, 8rem);
+      color: rgba(255,255,255,.7);
+      background: #08150f;
+    }
+    .footer-brand { margin: 0; color: #fff; font-family: Georgia, "Times New Roman", serif; font-size: 1.5rem; font-weight: 700; }
+    footer p { margin: .3rem 0 0; }
+    footer a { color: var(--gold-light); text-underline-offset: .25rem; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 900px) {
+      .site-header { position: fixed; background: rgba(13,31,23,.94); backdrop-filter: blur(12px); }
+      .menu-button { display: block; }
+      .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.25rem;
+        background: var(--ink-deep);
+      }
+      .nav.open { display: flex; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { min-height: 42rem; }
+      .hero-image { min-height: 72svh; }
+      .origin, .vineyard, .tasting-grid, .table-section { grid-template-columns: 1fr; }
+      .vineyard-photo { min-height: 60svh; }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: clamp(3.8rem, 21vw, 6.2rem); }
+      .hero-facts { gap: 1.5rem; }
+      .hero-fact { min-width: 7rem; }
+      .section { padding: 4.5rem 1.25rem; }
+      .fact-row { grid-template-columns: 1fr; gap: .25rem; }
+      .tasting-notes { grid-template-columns: 1fr; }
+      footer { grid-template-columns: 1fr; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="El Follón, inicio">EL FOLLÓN</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav">MENÚ</button>
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+      <a href="#origen">Origen</a>
+      <a href="#vinedo">Viñedo</a>
+      <a href="#cata">Cata</a>
+      <a href="#mesa">Servicio y mesa</a>
+      <a href="#edicion">Edición limitada</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow">Malvasía Volcánica · 2024</p>
+        <h1>El Follón</h1>
+        <p class="hero-subtitle">De Lajares. Del Atlántico. De la tierra volcánica.</p>
+        <p class="hero-lead">Una expresión singular nacida de una cuidada selección de uva y de un trabajo minucioso en botella que le aportan armonía, profundidad y una identidad inconfundible.</p>
+        <div class="hero-facts" aria-label="Datos principales del vino">
+          <div class="hero-fact"><strong>290</strong><span>botellas</span></div>
+          <div class="hero-fact"><strong>12%</strong><span>alcohol</span></div>
+          <div class="hero-fact"><strong>10–12 °C</strong><span>servicio</span></div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/el-follon-una-botella.jpg" alt="Botella de El Follón entre uvas blancas, con el viñedo de Lajares al fondo">
+        <span class="hero-location">Lajares · Fuerteventura</span>
+      </div>
+    </section>
+
+    <section class="section origin" id="origen">
+      <div class="reveal">
+        <p class="section-kicker">Origen</p>
+        <h2 class="section-title">Lajares</h2>
+      </div>
+      <div class="origin-copy reveal">
+        <p class="origin-intro">El Follón es una expresión singular de la Malvasía Volcánica procedente de una parcela de Lajares, un enclave marcado por suelos de ceniza volcánica.</p>
+        <p>Aquí, la escasez de lluvia y la influencia atlántica imprimen carácter a la uva y dan forma a un vino de personalidad propia.</p>
+      </div>
+    </section>
+
+    <section class="section vineyard" id="vinedo">
+      <figure class="vineyard-photo reveal">
+        <img src="assets/el-follon-dos-botellas.jpg" alt="Dos botellas de El Follón con copas, uvas blancas y paisaje volcánico">
+      </figure>
+      <div class="vineyard-panel reveal">
+        <p class="section-kicker">Viñedo y elaboración</p>
+        <h2 class="section-title">El carácter del paisaje</h2>
+        <dl class="fact-list">
+          <div class="fact-row"><dt>Clima</dt><dd>Atlántico, con fuertes contrastes entre el día y la noche.</dd></div>
+          <div class="fact-row"><dt>Suelos</dt><dd>Franco arcilla arenosa y ceniza volcánica.</dd></div>
+          <div class="fact-row"><dt>Cultivo</dt><dd>Viñedo prefiloxérico dispuesto en hileras y protegido por un paisaje de gran contraste.</dd></div>
+        </dl>
+        <div class="rainfall"><strong>120–150</strong><span>mm de pluviometría media anual</span></div>
+      </div>
+    </section>
+
+    <section class="section tasting" id="cata">
+      <div class="tasting-grid">
+        <div class="reveal">
+          <p class="section-kicker">Notas de cata</p>
+          <h2 class="section-title">Precisión y profundidad</h2>
+        </div>
+        <div class="tasting-notes reveal">
+          <article class="tasting-note"><h3>Vista</h3><p>Amarillo pálido con reflejos dorados. Brillante y limpio.</p></article>
+          <article class="tasting-note"><h3>Nariz</h3><p>Amplio y expresivo, con fruta blanca madura, notas cítricas frescas y un toque floral. Aparecen matices sutiles de panadería fina.</p></article>
+          <article class="tasting-note"><h3>Boca</h3><p>Textura sedosa y envolvente, con untuosidad, frescura equilibrada y un carácter salino que avanza con amplitud y elegancia.</p></article>
+          <article class="tasting-note"><h3>Final</h3><p>Persistente y largo, profundamente ligado al paisaje de Fuerteventura.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section table-section" id="mesa">
+      <div class="reveal">
+        <p class="section-kicker">Servicio y mesa</p>
+        <h2 class="section-title">El vino en la mesa</h2>
+        <div class="service-temp"><strong>10–12 °C</strong><span>Temperatura de servicio</span></div>
+        <p class="pairing"><strong>Maridaje.</strong> Arroces marineros, quesos semicurados, cocina asiática ligera, verduras, carnes asadas y platos con matices ahumados.</p>
+      </div>
+      <div class="reveal">
+        <p class="section-kicker">Análisis</p>
+        <h2 class="section-title">Ficha del vino</h2>
+        <dl class="analysis">
+          <div><dt>Alcohol</dt><dd>12% vol.</dd></div>
+          <div><dt>Azúcar residual</dt><dd>0,5 g/L</dd></div>
+          <div><dt>Acidez total</dt><dd>8 g/L</dd></div>
+          <div><dt>pH</dt><dd>3</dd></div>
+          <div><dt>Alérgenos</dt><dd>Contiene sulfitos</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section limited" id="edicion">
+      <div class="limited-inner reveal">
+        <p class="section-kicker">Edición limitada</p>
+        <h2 class="section-title">Una producción mínima</h2>
+        <p>Cada una de las 290 botellas resume una selección cuidada de uva y un trabajo paciente sobre lías. El resultado es un vino gastronómico, de guarda, con armonía y profundidad.</p>
+        <p>Se puede consumir hasta 2030 si se conserva en óptimas condiciones.</p>
+        <p class="cellar-note">Una elaboración pensada para evolucionar con elegancia.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <p class="footer-brand">Bodega Olivina</p>
+      <p>El Follón · Malvasía Volcánica 2024 · Fuerteventura</p>
+    </div>
+    <a href="https://www.bodegaolivina.com" rel="noopener">www.bodegaolivina.com</a>
+  </footer>
+
+  <script>
+    const button = document.querySelector('.menu-button');
+    const nav = document.querySelector('.nav');
+    button.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      button.setAttribute('aria-expanded', String(open));
+    });
+    nav.addEventListener('click', (event) => {
+      if (event.target.matches('a')) {
+        nav.classList.remove('open');
+        button.setAttribute('aria-expanded', 'false');
+      }
+    });
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  </script>
+</body>
+</html>
+
