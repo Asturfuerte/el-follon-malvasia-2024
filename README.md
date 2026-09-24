@@ -1,6 +1,6 @@
 # El Follón
 
-Web estática del vino El Follón, Malvasía Volcánica 2024 de Lajares, Fuerteventura.
+Web estática del vino El Follón, Malvasía Volcánica 2026 de Lajares, Fuerteventura.
 
 ## Despliegue en Dokploy
 
@@ -11,4 +11,3 @@ Web estática del vino El Follón, Malvasía Volcánica 2024 de Lajares, Fuertev
 - No requiere base de datos
 
 El contenedor usa Nginx y sirve directamente el contenido de `dist/`.
-
