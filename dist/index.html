@@ -367,7 +367,11 @@
     }
 
     @media (max-width: 600px) {
-      .hero h1 { font-size: clamp(3.8rem, 21vw, 6.2rem); }
+      .hero h1 {
+        font-size: clamp(2.4rem, 12.5vw, 4.2rem);
+        max-width: none;
+        white-space: nowrap;
+      }
       .hero-facts { gap: 1.5rem; }
       .hero-fact { min-width: 7rem; }
       .section { padding: 4.5rem 1.25rem; }
